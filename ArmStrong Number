@@ -1,0 +1,30 @@
+function armStrong(num, i){
+    var num1 = num;
+    var rem;
+    var sum = 0;
+    while (num!=0){
+        rem = num%10;
+        sum = sum + Math.pow(rem,i);
+        num = Math.floor(num/10);
+    }
+    if (sum==num1){
+        console.log("ArmStrong Number!")
+    }
+    else{
+        console.log("NOT ArmStrong Number!")
+    }
+}
+function order(num){
+    var rem;
+    var i = 0;
+    while (num!=0){
+        rem = num%10;
+        num = Math.floor(num/10);
+        i++;
+    }
+    return i;
+}
+
+var num = parseInt(prompt("Enter the number: "));
+var power = order(num);
+armStrong(num, power);
