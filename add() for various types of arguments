@@ -1,0 +1,15 @@
+function add(){
+    var sum = 0;
+    for(let i = 0; i<arguments.length; i++){
+        sum = isNaN(parseInt(arguments[i]))?sum+0:sum+parseInt(arguments[i]);
+    }
+    console.log(sum);
+}
+
+add();
+add(10);
+add(10, 20);
+add(10, "20");
+add(10, "ten");
+add(10, NaN);
+add(10, 20, 30, 40, 50);
