@@ -1,0 +1,26 @@
+function prime(num){
+    if (num == 0 || num == 1){
+        console.log("Neither prime nor composite!");
+    }
+    else if(num == 2){
+        console.log("Prime number!")
+    }
+    else{
+        var composite = false;
+        for (let i = 2; i<=num/2; i++){
+            if (num%i==0){
+                composite = true
+                break;
+            }
+        }
+        if (composite == true){
+            console.log("Composite number!");
+        }
+        else{
+            console.log("Prime number!");
+        }
+    }
+}
+
+var num = parseInt(prompt("Enter the number: "));
+prime(num);
