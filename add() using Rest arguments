@@ -1,0 +1,30 @@
+function add(...args){
+    var n = args.length;
+    var sum = 0;
+    for(let i = 0; i<n; i++){
+        if(args[i] instanceof Array){
+            for(let j = 0; j<args[i].length; j++){
+                sum = (isNaN(parseInt(arguments[i][j]))?sum+0:sum+parseInt(arguments[i][j]));
+            }
+        }
+        else{
+            sum = isNaN(parseInt(arguments[i]))?sum+0:sum+parseInt(arguments[i]);
+        }
+    }
+    console.log(sum);
+}
+function one(){
+        return 1;
+}
+function two(){
+    return "2";
+}
+add();
+add(10);
+add(10, 20);
+add(10, "20");
+add(10, "ten");
+add(10, NaN);
+add(10, 20, 30, 40, 50);
+add(1,[2,3,"4"], "1", "one");
+add(1,[one(), two(), 3, "4"], one(), two(), "one", "two");
