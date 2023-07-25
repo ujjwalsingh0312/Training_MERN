@@ -26,5 +26,4 @@ function order(num){
 }
 
 var num = parseInt(prompt("Enter the number: "));
-var power = order(num);
-armStrong(num, power);
+armStrong(num, order(num));
