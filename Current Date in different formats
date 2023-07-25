@@ -1,0 +1,12 @@
+function date(){
+    var dt = new Date();
+    var d = dt.getDate();
+    var m = dt.getMonth();
+    var y = dt.getFullYear();
+    console.log(`dd-mm-yyyy format: ${d}-${m+1}-${y}`);
+    console.log(`dd/mm/yyyy format: ${d}/${m+1}/${y}`);
+    console.log(`mm-dd-yyyy format: ${m+1}-${d}-${y}`);
+    console.log(`mm/dd/yyyy format: ${m+1}/${d}/${y}`);
+}
+
+date();
