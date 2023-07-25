@@ -1,0 +1,17 @@
+function day(){
+    var d = new Date();
+    var day = d.getDay();
+    var days = {1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday", 7:"Sunday"};
+    console.log("Today is: " +days[day]);
+}
+function time(){
+    var t = new Date();
+    var t1 = t.getHours();
+    t1 = (t1>12)?`${t1-12} PM`:`${t1} AM`;
+    var t2 = t.getMinutes();
+    var t3 = t.getSeconds();
+    console.log(`Current time is: ${t1} : ${t2} : ${t3}`);
+}
+
+day();
+time();
