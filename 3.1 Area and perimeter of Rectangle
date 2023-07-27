@@ -1,0 +1,53 @@
+A) Named Function
+function perimeterNarea(l,b){
+    l = (l<0)?0:l;
+    b = (b<0)?0:b;
+    console.log("Perimeter of the rectangle: "+2*(l+b));
+    console.log("Area of the rectangle: "+(l*b));
+}
+
+length = parseInt(prompt("Enter the length: "));
+breadth = parseInt(prompt("Enter the breadth: "));
+perimeterNarea(length, breadth);
+
+B) Arrow Function
+const RECT = (l,b)=>{
+    console.log("Perimeter of the rectangle: "+2*(l+b));
+    console.log("Area of the rectangle: "+(l*b));
+}
+
+length = parseInt(prompt("Enter the length: "));
+breadth = parseInt(prompt("Enter the breadth: "));
+RECT(length, breadth);
+
+C) Function Expression
+function Rectangle(){
+    var area = function(l,b){
+        return l*b;
+    }
+    var perimeter = function(l,b){
+        return 2*(l+b);
+    }
+    return {area,perimeter};
+}
+
+length = parseInt(prompt("Enter the length: "));
+breadth = parseInt(prompt("Enter the breadth: "));
+console.log("Perimeter of the rectangle: "+Rectangle().perimeter(length, breadth));
+console.log("Area of the rectangle: "+Rectangle().area(length, breadth));
+
+D) Named Function Expression
+function Rectangle(){
+    var area = function area(l,b){
+        return l*b;
+    }
+    var perimeter = function peri(l,b){
+        return 2*(l+b);
+    }
+    return {area,perimeter};
+}
+
+length = parseInt(prompt("Enter the length: "));
+breadth = parseInt(prompt("Enter the breadth: "));
+console.log("Perimeter of the rectangle: "+Rectangle().perimeter(length, breadth));
+console.log("Area of the rectangle: "+Rectangle().area(length, breadth));
