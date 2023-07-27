@@ -1,0 +1,11 @@
+var Salary = [12000, 9000, 8500, 15000, 7000, 20000, 21000];
+console.log("Salary: ["+Salary+"]");
+
+var SumSalary = Salary.reduce((sum, sal) => (sal>10000)?sum+sal:sum+0,0);
+console.log("Sum of the Salary > 10000: "+SumSalary);
+
+var MaxSalary = Salary.reduce((Max, sal) => (Max<sal)?Max=sal:Max);
+console.log("Maximum Salary: "+MaxSalary);
+
+var Count = Salary.reduce((count, sal) => (sal>10000)?++count:count,0);
+console.log("No. of Salaries > 10000: "+Count);
