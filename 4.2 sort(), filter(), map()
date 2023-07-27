@@ -1,0 +1,9 @@
+var Employees = [{Name:"Akshay", Salary:12000}, {Name:"Rohit", Salary:10000}, {Name:"Yuvraj", Salary:12500}, {Name:"Jai", Salary:8000}, {Name:"Vikas", Salary:15000}];
+console.log("Employees sorted by Name:")
+console.log(Employees.sort((a,b) => a.Name.localeCompare(b.Name)));
+console.log("Employees sorted by Salary:")
+console.log(Employees.sort((a,b) => a.Salary - b.Salary));
+
+var Emp = Employees.filter(e => true);
+var NewSalary = Emp.map(e => (e.Salary - e.Salary*0.1));
+console.log("Updated Salary: ["+NewSalary+"]");
