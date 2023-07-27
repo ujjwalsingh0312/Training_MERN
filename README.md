@@ -20,3 +20,10 @@ rest arguments, spread, types of variable declaration, scope level, truthy and f
 
 Code-
 1) Area and Perimeter of Rectangle using 4 different types of functions
+
+Day-4:
+types of functions, declarative & imperative programming, various in-built JavaScript functions
+
+Code- 
+1) Usage of reduce()
+2) Usage of sort(), filter(), map()
