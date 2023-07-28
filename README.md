@@ -27,3 +27,6 @@ types of functions, declarative & imperative programming, various in-built JavaS
 Code- 
 1) Usage of reduce()
 2) Usage of sort(), filter(), map()
+
+Day-5:
+Pizza-Hunting :- an application made with the help of HTML and CSS
