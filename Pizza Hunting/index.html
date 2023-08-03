@@ -8,22 +8,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" crossorigin="anonymous"
         rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" />
     <link rel="stylesheet" href="stylesheet/main.css">
+    <script type="module" src="scripts/controllers/product-contoller.js"></script>
 </head>
 
 <body>
     <header class="mLogo">
         <div class="logo">
-            <img src="https://www.pizzahut.co.in/_next/static/static/images/logo.38f9109e24d22d58d048837b27f54390.png" alt="">
+            <img src="https://www.pizzahut.co.in/_next/static/static/images/logo.38f9109e24d22d58d048837b27f54390.png"
+                alt="">
         </div>
     </header>
     <div class="container">
-        <h1 class="alert alert-info text-center">Pizza Story</h1>
+        <h1 class="alert alert-warning text-center">Pizza Story</h1>
         <div class="row">
             <div class="col-8">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="Images/farmhouse.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
+                <div id="output" class="row">
+                    <!--Cards are made dynamically here-->
+                    <!--<div class="col-4">
+                        <div class="cards mt-2">
+                            <img src="./Images/farmhouse.jpg" class="card-img-top" alt="..." height="200px"
+                                width="200px" />
                             <div class="card-body">
                                 <h5 class="card-title">Farm House</h5>
                                 <p class="card-text">
@@ -33,87 +37,69 @@
                                 <a href="#" class="btn btn-primary">Add to Basket</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="Images/veggie.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
-                            <div class="card-body">
-                                <h5 class="card-title">Veggie Paradise</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Add to Basket</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="Images/Margaritta.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
-                            <div class="card-body">
-                                <h5 class="card-title">Margaritta</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Add to Basket</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/momo-mia-veg.5f34ea52c10db4a56881051692a618ca.1.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
-                            <div class="card-body">
-                                <h5 class="card-title">Momo Mia</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Add to Basket</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/mazedar-makhni-paneer.cb3150d2be9cb8dcd248be70921c5196.1.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
-                            <div class="card-body">
-                                <h5 class="card-title">Mazedar Makhni Paneer</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Add to Basket</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card mt-2">
-                            <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/country-feast-cheese-maxx.01396975bebd766302f117884bbb9304.1.jpg" class="card-img-top" alt="..." height="200px" width="200px" />
-                            <div class="card-body">
-                                <h5 class="card-title">Country Feast</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Add to Basket</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
-            <div class="col-4 border border-1">
-                <h3>Total Bill</h3>
-                <div class="card">
-                    Pizza 1
-                    Pizza 2
-                    Pizza 3
+            <div class="col-4">
+                <h2 class="text-center alert alert-success">Total Bill</h2>
+                <div class="card alert alert-info">
+                    <ul>
+                        <div class="row">
+                            <h5 class="col-9 text-left">Pizza Name</h5>
+                            <h5 class="col-3 text-right">Price</h5>
+                        </div>
+                    </ul>
+                    <ul id="basket">
+                        <!--Dynamic listed array-->
+                    </ul>
                 </div>
-                <div class="card">
-                    Total Pizza: <span>3</span>
-                    Pizza Amount: 
-                    <span>1800</span>
+                <div class="card alert alert-warning">
+                    <h5>Total Pizza: </h5>
+                    <span id="total">
+                        <!--Dynamic total pizza-->
+                    </span><br>
+                    <h4>Amount to be paid: </h4>
+                    <span><b>Amount: </b>
+                        <span id="amount">
+                            <!--Dynamic pizza amount -->
+                        </span>
+                    </span>
+                    <span><b>GST(18%): </b>
+                        <span id="gst">
+                            <!--Dynamic gst amount -->
+                        </span>
+                    </span>
+                    <span><b>Total Amount: </b>
+                        <span id="totamount">
+                            <!--Dynamic total Amount-->
+                        </span>
+                    </span>
                 </div>
-                <button class="btn btn-success w-100 mt-2">Pay Bill</button>
+                <button id="clickme" class="btn btn-outline-success w-100 mt-2">Pay Bill</button>
+                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                <script>
+                    var options = {
+                        "key": "rzp_test_1IctVx1wdOXMbs", // Enter the Key ID generated from the Dashboard
+                        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                        "currency": "INR",
+                        "name": "Acme Corp", //your business name
+                        "description": "Test Transaction",
+                        "image": "https://example.com/your_logo",
+                        "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                        "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+                        "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                            "name": "Gaurav Kumar", //your customer's name
+                            "email": "gaurav.kumar@example.com",
+                            "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+                        },
+                        "notes": {
+                            "address": "Razorpay Corporate Office"
+                        },
+                        "theme": {
+                            "color": "#3399cc"
+                        }
+                    };
+                </script>
             </div>
         </div>
     </div>
