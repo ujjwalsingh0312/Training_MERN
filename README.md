@@ -28,5 +28,11 @@ Code-
 1) Usage of reduce()
 2) Usage of sort(), filter(), map()
 
-Day-5:
-Pizza-Hunting :- an application made with the help of HTML and CSS
+Day-5 to Day-9:
+Pizza-Hunting :- an application made with the help of HTML and CSS and JavaScript
+
+Day-10:
+Introduction to ReactJS
+
+Day-11:
+Libraries of ReactJS and loading the data from JSON
