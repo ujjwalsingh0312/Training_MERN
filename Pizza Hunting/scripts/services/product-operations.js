@@ -13,11 +13,13 @@ const productOperations = {
         return prodbasket;
     },
     addToCart(product){
+        //console.log("add");
         this.carts.push(product);
         //console.log("Cart: ")
         //console.log(this['carts']);
     },
     removeFromCart(product){
+        //console.log("remove");
         this.carts = this.carts.filter(piz => piz.id != product.id);
         //console.log("Cart: ")
         //console.log(this['carts']);

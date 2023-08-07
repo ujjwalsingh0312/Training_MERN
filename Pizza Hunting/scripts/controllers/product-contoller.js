@@ -70,34 +70,38 @@ function printCart(pizza) {
     console.log(cartProducts);
     const cart = document.querySelector('#basket');
     cart.innerHTML = '';
-    cartProducts.forEach(el => {
-        //const pizcard = document.createElement('div');
-        //pizcard.className = 'card';
-        const pizrow = document.createElement('div');
-        pizrow.className = 'row';
-        // const headline1 = document.createElement('div');
-        // headline1.className = 'col-9 text-left';
-        // headline1.innerText = 'Pizza Name';
-        // const headline2 = document.createElement('div');
-        // headline2.className = 'col-3 text-center';
-        // headline2.innerText = 'Price';
-        const pizname = document.createElement('li');
-        pizname.className = 'col-9 text-left';
-        pizname.innerText = el.name;
-        const pizprice = document.createElement('div');
-        pizprice.className = 'col-3 text-right'
-        pizprice.innerText = `$ ${el.price}`;
-        //pizrow.appendChild(headline1);
-        //pizrow.appendChild(headline2);
-        pizrow.appendChild(pizname);
-        pizrow.appendChild(pizprice);
-        //pizcard.appendChild(pizrow);
-        cart.appendChild(pizrow);
-        // const li = document.createElement('li');
-        // li.className = 'card';
-        // li.innerText = `Pizza: ${el.name} Price:$${el.price}`;
-        // cart.appendChild(li);
-    });
+    if (cartProducts.length == 0) {
+        const pirow = document.createElement('div');
+        pirow.className = 'row';
+        const cartz = document.createElement('p');
+        cartz.innerText = 'Cart is Empty!';
+        pirow.appendChild(cartz);
+        cart.appendChild(pirow);
+    }
+    else {
+        cartProducts.forEach(el => {
+            const pizrow = document.createElement('div');
+            pizrow.className = 'row';
+            const pizname = document.createElement('li');
+            pizname.className = 'col-7 text-left';
+            pizname.innerText = el.name;
+            const pizquant = document.createElement('div');
+            pizquant.className = 'col-2 text-center';
+            pizquant.innerText = '1';
+            const pizprice = document.createElement('div');
+            pizprice.className = 'col-3 text-right'
+            pizprice.innerText = `$ ${el.price}`;
+            pizrow.appendChild(pizname);
+            pizrow.appendChild(pizquant);
+            pizrow.appendChild(pizprice);
+            cart.appendChild(pizrow);
+            // const li = document.createElement('li');
+            // li.className = 'card';
+            // li.innerText = `Pizza: ${el.name} Price:$${el.price}`;
+            // cart.appendChild(li);
+        });
+    }
+
 
     const totalPizza = cartProducts.length;
     const total = document.querySelector('#total');
@@ -111,14 +115,14 @@ function printCart(pizza) {
     pizzaAmount.innerText = `$ ${amount}`;
     const gstamount = document.querySelector('#gst');
     gstamount.innerHTML = '';
-    gstamount.innerText = `$ ${amount*(0.18)}`;
+    gstamount.innerText = `$ ${amount * (0.18)}`;
     const totamount = document.querySelector('#totamount');
     totamount.innerHTML = '';
     totamount.innerText = `$ ${totalAmount}`;
 }
 
-var rzp1 = new Razorpay(options);
-document.getElementById('clickme').onclick = function (e) {
-    rzp1.open();
-    e.preventDefault();
-}
+// var rzp1 = new Razorpay(options);
+// document.getElementById('clickme').onclick = function (e) {
+//     rzp1.open();
+//     e.preventDefault();
+// }

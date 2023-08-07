@@ -41,50 +41,66 @@
                 </div>
             </div>
             <div class="col-4">
-                <h2 class="text-center alert alert-success">Total Bill</h2>
                 <div class="card alert alert-info">
-                    <ul>
-                        <div class="row">
-                            <h5 class="col-9 text-left">Pizza Name</h5>
-                            <h5 class="col-3 text-right">Price</h5>
-                        </div>
-                    </ul>
-                    <ul id="basket">
-                        <!--Dynamic listed array-->
-                    </ul>
+                    <h2 class="text-center alert alert-success">Your Cart</h2>
+                    <div class="card ">
+                        <ul>
+                            <div class="row">
+                                <h5 class="col-7 text-left">Pizza Name</h5>
+                                <h5 class="col-2 text-left">Qty</h5>
+                                <h5 class="col-3 text-right">Price</h5>
+                            </div>
+                        </ul>
+                        <ul id="basket">
+                            <span class="text-center">Cart is Empty!</span>
+                            <!--Dynamic listed array-->
+                        </ul>
+                    </div>
                 </div>
                 <div class="card alert alert-warning">
-                    <h5>Total Pizza: </h5>
-                    <span id="total">
-                        <!--Dynamic total pizza-->
-                    </span><br>
-                    <h4>Amount to be paid: </h4>
-                    <span><b>Amount: </b>
-                        <span id="amount">
-                            <!--Dynamic pizza amount -->
+                    <h2 class="text-center alert alert-danger">Bill</h2>
+                    <div class="card ">
+                        <h5>Total Pizza: </h5>
+                        <span id="total">
+                            0
+                            <!--Dynamic total pizza-->
+                        </span><br>
+                        <!-- <h4>Amount to be paid: </h4> -->
+                        <span><b>Amount: </b>
+                            <span id="amount">
+                                $ 0
+                                <!--Dynamic pizza amount -->
+                            </span>
                         </span>
-                    </span>
-                    <span><b>GST(18%): </b>
-                        <span id="gst">
-                            <!--Dynamic gst amount -->
+                        <span><b>GST(18%): </b>
+                            <span id="gst">
+                                $ 0
+                                <!--Dynamic gst amount -->
+                            </span>
                         </span>
-                    </span>
-                    <span><b>Total Amount: </b>
-                        <span id="totamount">
-                            <!--Dynamic total Amount-->
+                        <span>
+                            <h3>Total Amount:</h3>
+                            <span id="totamount">
+                                $ 0
+                                <!--Dynamic total Amount-->
+                            </span>
                         </span>
-                    </span>
+                    </div>
                 </div>
-                <button id="clickme" class="btn btn-outline-success w-100 mt-2">Pay Bill</button>
-                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                <!--<button id="clickme" class="btn btn-outline-success w-100 mt-2">Pay Bill</button>-->
+                <form>
+                    <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                        data-payment_button_id="pl_MLsiT18HT8AQ3v" async> </script>
+                </form>
+                <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
                 <script>
                     var options = {
                         "key": "rzp_test_1IctVx1wdOXMbs", // Enter the Key ID generated from the Dashboard
                         "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                         "currency": "INR",
-                        "name": "Acme Corp", //your business name
+                        "name": "Pizza Hunting", //your business name
                         "description": "Test Transaction",
-                        "image": "https://example.com/your_logo",
+                        "image": "https://www.pizzahut.co.in/_next/static/static/images/logo.38f9109e24d22d58d048837b27f54390.png",
                         "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                         "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
                         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
@@ -99,7 +115,7 @@
                             "color": "#3399cc"
                         }
                     };
-                </script>
+                </script> -->
             </div>
         </div>
     </div>

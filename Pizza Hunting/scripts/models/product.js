@@ -10,6 +10,7 @@ class Product{
         this.price = price;
         this.url = url;
         this.isAddedInCart = false;
+        //this.noOfpizza = 0;
     }
 }
 export default Product;
